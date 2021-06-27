@@ -1,10 +1,13 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Projeto com Brasil API</li>
-  </ol>
+<nav class="navbar navbar-light bg-light mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://brasilapi.com.br/docs">
+      <img src="https://brasilapi.com.br/images/api-schema.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Projeto com Brasil API
+    </a>
+  </div>
 </nav>
 
-<div class="d-flex align-items-start">
+<div class="d-flex align-items-start mx-2">
 
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">CEP</button>
@@ -25,12 +28,12 @@
               <div *ngIf="f.submitted && cep.invalid" class="invalid-feedback">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
+            <button type="submit" class="btn btn-primary mt-3">Pesquisar</button>
           </form>
         </div>
       </div>
     
-      <div class="card list-city">
+      <div class="card list-city mt-3">
         <p class="card-header">Lista Cidades</p>
         <div class="card-body">
           <table class="table">
