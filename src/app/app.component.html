@@ -23,7 +23,7 @@
         <div class="card-body">
           <form id="add-form" (ngSubmit)="f.form.valid && getCity(f)" #f="ngForm" novalidate>
             <div class="form-group">
-              <label for="cep" class="cep-label">CEP</label>
+              <label for="cep" class="cep-label mb-3">CEP</label>
               <input type="text" [(ngModel)]="city.cep" id="cep" name="cep" #cep="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cep.invalid }" placeholder="Digite o CEP">
               <div *ngIf="f.submitted && cep.invalid" class="invalid-feedback">
               </div>
