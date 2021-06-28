@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CepComponent } from './cep/cep.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CepComponent
   ],
   imports: [
     BrowserModule,

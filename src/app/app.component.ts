@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CityService } from './services/city.service';
-import { City } from './models/city';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,27 +7,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Brasil-API';
-  city: City = {} as City;
-  cities: City[] = [];
-
-  constructor(private cityService: CityService) {}
+  constructor() {}
 
   ngOnInit() {
-  }
-
-  getCity(form: NgForm) {
-    this.cityService.getCityByCep(this.city.cep).subscribe((city) => {
-      this.city = city;
-      this.cities.push(city);
-      this.cleanForm(form);
-    });
-  }
-
-  
-  // limpa o formulario
-  cleanForm(form: NgForm) {
-    this.city = {} as City;
-    form.resetForm();
   }
 }
