@@ -7,11 +7,17 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CepComponent } from './cep/cep.component';
+import { CnpjComponent } from './cnpj/cnpj.component';
+import { DddComponent } from './ddd/ddd.component';
+import { BancosComponent } from './bancos/bancos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CepComponent
+    CepComponent,
+    CnpjComponent,
+    DddComponent,
+    BancosComponent
   ],
   imports: [
     BrowserModule,
