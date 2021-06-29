@@ -21,30 +21,44 @@
             <tr>
             <th scope="col">CNPJ</th>
             <th scope="col">Razão Social</th>
-            <th scope="col">Nome fantasia</th>
-            <th scope="col">Situação Cadastral</th>
-            <th scope="col">Logradouro</th>
-            <th scope="col">Número</th>
-            <th scope="col">Complemento</th>
-            <th scope="col">Bairro</th>
-            <th scope="col">CEP</th>
-            <th scope="col">UF</th>
-            <th scope="col">Municipio</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let empresa of empresas">
             <td>{{empresa.cnpj}}</td>
-            <td>{{empresa.razao_social}}</td>
-            <td>{{empresa.nome_fantasia}}</td>
-            <td>{{empresa.descricao_situacao_cadastral}}</td>
-            <td>{{empresa.logradouro}}</td>
-            <td>{{empresa.numero}}</td>
-            <td>{{empresa.complemento}}</td>
-            <td>{{empresa.bairro}}</td>
-            <td>{{empresa.cep}}</td>
-            <td>{{empresa.uf}}</td>
-            <td>{{empresa.municipio}}</td>
+            <td>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            {{empresa.razao_social}}
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <dl class="row">
+                                <dt class="col-sm-3">Nome Fantasia</dt>
+                                <dd class="col-sm-9">{{empresa.nome_fantasia}}</dd>
+                                <dt class="col-sm-3">Situação Cadastral</dt>
+                                <dd class="col-sm-9">{{empresa.descricao_situacao_cadastral}}</dd>
+                                <dt class="col-sm-3">Logradouro</dt>
+                                <dd class="col-sm-9">{{empresa.logradouro}}</dd>
+                                <dt class="col-sm-3">Número</dt>
+                                <dd class="col-sm-9">{{empresa.numero}}</dd>
+                                <dt class="col-sm-3">Complemento</dt>
+                                <dd class="col-sm-9">{{empresa.complemento}}</dd>
+                                <dt class="col-sm-3">Bairro</dt>
+                                <dd class="col-sm-9">{{empresa.bairro}}</dd>
+                                <dt class="col-sm-3">CEP</dt>
+                                <dd class="col-sm-9">{{empresa.cep}}</dd>
+                                <dt class="col-sm-3">Municipio/UF</dt>
+                                <dd class="col-sm-9">{{empresa.municipio}}/{{empresa.uf}}</dd>
+                            </dl>                              
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </td>
             </tr>
         </tbody>
         </table>
