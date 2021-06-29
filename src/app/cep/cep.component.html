@@ -7,7 +7,7 @@
             <input type="text" [(ngModel)]="city.cep" id="cep" name="cep" #cep="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cep.invalid }" placeholder="Digite o CEP">
             <div *ngIf="f.submitted && cep.invalid" class="invalid-feedback"></div>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Pesquisar</button>
+        <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
         </form>
     </div>
 </div>

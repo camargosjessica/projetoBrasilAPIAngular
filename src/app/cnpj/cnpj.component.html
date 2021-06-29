@@ -8,7 +8,7 @@
             <div *ngIf="f.submitted && cnpj.invalid" class="invalid-feedback">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Pesquisar</button>
+        <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
         </form>
     </div>
 </div>
@@ -37,22 +37,14 @@
                       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <dl class="row">
-                                <dt class="col-sm-3">Nome Fantasia</dt>
-                                <dd class="col-sm-9">{{empresa.nome_fantasia}}</dd>
-                                <dt class="col-sm-3">Situação Cadastral</dt>
-                                <dd class="col-sm-9">{{empresa.descricao_situacao_cadastral}}</dd>
-                                <dt class="col-sm-3">Logradouro</dt>
-                                <dd class="col-sm-9">{{empresa.logradouro}}</dd>
-                                <dt class="col-sm-3">Número</dt>
-                                <dd class="col-sm-9">{{empresa.numero}}</dd>
-                                <dt class="col-sm-3">Complemento</dt>
-                                <dd class="col-sm-9">{{empresa.complemento}}</dd>
-                                <dt class="col-sm-3">Bairro</dt>
-                                <dd class="col-sm-9">{{empresa.bairro}}</dd>
-                                <dt class="col-sm-3">CEP</dt>
-                                <dd class="col-sm-9">{{empresa.cep}}</dd>
+                                <dt class="col-sm-3">Endereço</dt>
+                                <dd class="col-sm-9">{{empresa.logradouro}}, {{empresa.numero}}, {{empresa.complemento}}, {{empresa.bairro}}</dd>
                                 <dt class="col-sm-3">Municipio/UF</dt>
                                 <dd class="col-sm-9">{{empresa.municipio}}/{{empresa.uf}}</dd>
+                                <dt class="col-sm-3">CEP</dt>
+                                <dd class="col-sm-9">{{empresa.cep}}</dd>
+                                <dt class="col-sm-3">Situação Cadastral</dt>
+                                <dd class="col-sm-9">{{empresa.descricao_situacao_cadastral}}</dd>
                             </dl>                              
                         </div>
                       </div>
