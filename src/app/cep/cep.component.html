@@ -2,12 +2,14 @@
     <p class="card-header">Pesquisar</p>
     <div class="card-body">
         <form id="add-form" (ngSubmit)="f.form.valid && getCity(f)" #f="ngForm" novalidate>
-        <div class="form-group">
-            <label for="cep" class="cep-label mb-3">CEP</label>
-            <input type="text" [(ngModel)]="city.cep" id="cep" name="cep" #cep="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cep.invalid }" placeholder="Digite o CEP">
-            <div *ngIf="f.submitted && cep.invalid" class="invalid-feedback"></div>
-        </div>
-        <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
+            <div class="form-group">
+                <label for="cep" class="cep-label mb-3">CEP</label>
+                <input type="text" [(ngModel)]="city.cep" id="cep" name="cep" #cep="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cep.invalid }"
+                    placeholder="Digite o CEP">
+                <div *ngIf="f.submitted && cep.invalid" class="invalid-feedback"></div>
+            </div>
+            <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
         </form>
     </div>
 </div>
@@ -16,24 +18,24 @@
     <p class="card-header">Lista Cidades</p>
     <div class="card-body">
         <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">CEP</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Cidade</th>
-            <th scope="col">Bairro</th>
-            <th scope="col">Rua</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let city of cities">
-            <td>{{city.cep}}</td>
-            <td>{{city.state}}</td>
-            <td>{{city.city}}</td>
-            <td>{{city.neighborhood}}</td>
-            <td>{{city.street}}</td>
-            </tr>
-        </tbody>
+            <thead>
+                <tr>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Rua</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of cities">
+                    <td>{{city.cep}}</td>
+                    <td>{{city.state}}</td>
+                    <td>{{city.city}}</td>
+                    <td>{{city.neighborhood}}</td>
+                    <td>{{city.street}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

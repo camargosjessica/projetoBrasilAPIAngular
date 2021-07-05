@@ -2,13 +2,15 @@
     <p class="card-header">Pesquisar</p>
     <div class="card-body">
         <form id="add-form" (ngSubmit)="f.form.valid && getEmpresa(f)" #f="ngForm" novalidate>
-        <div class="form-group">
-            <label for="cnpj" class="cnpj-label mb-3">CNPJ</label>
-            <input type="text" [(ngModel)]="empresa.cnpj" id="cnpj" name="cnpj" #cnpj="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cnpj.invalid }" placeholder="Digite o CNPJ">
-            <div *ngIf="f.submitted && cnpj.invalid" class="invalid-feedback">
+            <div class="form-group">
+                <label for="cnpj" class="cnpj-label mb-3">CNPJ</label>
+                <input type="text" [(ngModel)]="empresa.cnpj" id="cnpj" name="cnpj" #cnpj="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cnpj.invalid }"
+                    placeholder="Digite o CNPJ">
+                <div *ngIf="f.submitted && cnpj.invalid" class="invalid-feedback">
+                </div>
             </div>
-        </div>
-        <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
+            <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
         </form>
     </div>
 </div>
@@ -17,42 +19,46 @@
     <p class="card-header">Dados da empresa</p>
     <div class="card-body">
         <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">CNPJ</th>
-            <th scope="col">Razão Social</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let empresa of empresas">
-            <td>{{empresa.cnpj}}</td>
-            <td>
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            {{empresa.razao_social}}
-                        </button>
-                      </h2>
-                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <dl class="row">
-                                <dt class="col-sm-3">Endereço</dt>
-                                <dd class="col-sm-9">{{empresa.logradouro}}, {{empresa.numero}} {{empresa.complemento}}, {{empresa.bairro}}</dd>
-                                <dt class="col-sm-3">Municipio/UF</dt>
-                                <dd class="col-sm-9">{{empresa.municipio}}/{{empresa.uf}}</dd>
-                                <dt class="col-sm-3">CEP</dt>
-                                <dd class="col-sm-9">{{empresa.cep}}</dd>
-                                <dt class="col-sm-3">Situação Cadastral</dt>
-                                <dd class="col-sm-9">{{empresa.descricao_situacao_cadastral}}</dd>
-                            </dl>                              
+            <thead>
+                <tr>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col">Razão Social</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empresa of empresas">
+                    <td>{{empresa.cnpj}}</td>
+                    <td>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        {{empresa.razao_social}}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <dl class="row">
+                                            <dt class="col-sm-3">Endereço</dt>
+                                            <dd class="col-sm-9">{{empresa.logradouro}}, {{empresa.numero}}
+                                                {{empresa.complemento}}, {{empresa.bairro}}</dd>
+                                            <dt class="col-sm-3">Municipio/UF</dt>
+                                            <dd class="col-sm-9">{{empresa.municipio}}/{{empresa.uf}}</dd>
+                                            <dt class="col-sm-3">CEP</dt>
+                                            <dd class="col-sm-9">{{empresa.cep}}</dd>
+                                            <dt class="col-sm-3">Situação Cadastral</dt>
+                                            <dd class="col-sm-9">{{empresa.descricao_situacao_cadastral}}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    </div>
-                </div>
-            </td>
-            </tr>
-        </tbody>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

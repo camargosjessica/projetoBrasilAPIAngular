@@ -4,7 +4,9 @@
         <form id="add-form" (ngSubmit)="f.form.valid && getArea(f)" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="ddd" class="ddd-label mb-3">DDD</label>
-                <input type="text" [(ngModel)]="dddArea.ddd" id="ddd" name="ddd" #ddd="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && ddd.invalid }" placeholder="Digite o DDD">
+                <input type="text" [(ngModel)]="dddArea.ddd" id="ddd" name="ddd" #ddd="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && ddd.invalid }"
+                    placeholder="Digite o DDD">
                 <div *ngIf="f.submitted && ddd.invalid" class="invalid-feedback"></div>
             </div>
             <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
@@ -16,35 +18,38 @@
     <p class="card-header">Lista DDD</p>
     <div class="card-body">
         <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">DDD</th>
-                <th scope="col">Estado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dddArea of dddAreas">
-                <td>{{dddArea.ddd}}</td>
-                <td>
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                {{dddArea.area.state}}
-                            </button>
-                          </h2>
-                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <dl class="row" *ngFor="let city of dddArea.area.cities">
-                                    <dt >{{city}}</dt>
-                                </dl>                              
+            <thead>
+                <tr>
+                    <th scope="col">DDD</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dddArea of dddAreas">
+                    <td>{{dddArea.ddd}}</td>
+                    <td>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        {{dddArea.area.state}}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <dl class="row" *ngFor="let city of dddArea.area.cities">
+                                            <dt>{{city}}</dt>
+                                        </dl>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
