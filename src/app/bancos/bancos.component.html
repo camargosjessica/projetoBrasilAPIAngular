@@ -1,1 +1,35 @@
-<p>bancos works!</p>
+<div class="card">
+    <p class="card-header">Pesquisar</p>
+    <div class="card-body">
+        <form id="add-form" (ngSubmit)="f.form.valid && getBanco(f)" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="banco" class="banco-label mb-3">Bancos</label>
+                <input type="text" [(ngModel)]="banco.code" id="code" name="code" #code="ngModel" required
+                    class="form-control" [ngClass]="{ 'is-invalid': f.submitted && code.invalid }"
+                    placeholder="Digite o código do Banco">
+                <div *ngIf="f.submitted && code.invalid" class="invalid-feedback"></div>
+            </div>
+            <button type="submit" class="btn btn-outline-success mt-3">Pesquisar</button>
+        </form>
+    </div>
+</div>
+
+<div class="card list-banco mt-3">
+    <p class="card-header">Dados banco</p>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Banco</th>
+                    <th scope="col">Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let banco of bancos">
+                    <td>{{banco.name}}</td>
+                    <td>{{banco.code}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
